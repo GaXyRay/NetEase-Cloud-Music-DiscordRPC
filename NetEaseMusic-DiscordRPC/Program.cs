@@ -130,16 +130,11 @@ namespace NetEaseMusic_DiscordRPC
 
             autoButton.Click += (sender, args) =>
             {
-                var x = AutoStart.Check();
-                if (x)
-                {
+                if (AutoStart.Check())
                     AutoStart.Remove();
-                }
                 else
-                {
                     AutoStart.Set();
-                }
-                autoButton.Checked = !x;
+                autoButton.Checked = AutoStart.Check();
             };
 
             actiButton.Click += (sender, args) =>
