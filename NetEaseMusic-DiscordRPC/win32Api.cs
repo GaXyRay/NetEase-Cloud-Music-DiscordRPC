@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
@@ -98,13 +97,13 @@ namespace NetEaseMusic_DiscordRPC.Win32Api
             // UnrealWindow
             // Rainbow Six
 
-            if (!File.Exists(Application.StartupPath + "\\windows.txt"))
+            if (!File.Exists(Application.StartupPath + "\\whiteList.txt"))
             {
                 // Config file doesn't exits...
                 return false;
             }
 
-            using var sr = new StreamReader(Application.StartupPath + "\\windows.txt", Encoding.UTF8);
+            using var sr = new StreamReader(Application.StartupPath + "\\whiteList.txt", Encoding.UTF8);
 
             while ((window_name = sr.ReadLine()) != null)
             {

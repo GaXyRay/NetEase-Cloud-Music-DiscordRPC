@@ -38,9 +38,9 @@ namespace NetEaseMusic_DiscordRPC.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public string FullscreenRun {
+        public bool FullscreenRun {
             get {
-                return ((string)(this["FullscreenRun"]));
+                return ((bool)(this["FullscreenRun"]));
             }
             set {
                 this["FullscreenRun"] = value;
@@ -50,9 +50,9 @@ namespace NetEaseMusic_DiscordRPC.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public string WhitelistsRun {
+        public bool WhitelistsRun {
             get {
-                return ((string)(this["WhitelistsRun"]));
+                return ((bool)(this["WhitelistsRun"]));
             }
             set {
                 this["WhitelistsRun"] = value;
@@ -74,9 +74,9 @@ namespace NetEaseMusic_DiscordRPC.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public string DefStates {
+        public bool DefStates {
             get {
-                return ((string)(this["DefStates"]));
+                return ((bool)(this["DefStates"]));
             }
             set {
                 this["DefStates"] = value;
@@ -86,9 +86,9 @@ namespace NetEaseMusic_DiscordRPC.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public string showPaused {
+        public bool showPaused {
             get {
-                return ((string)(this["showPaused"]));
+                return ((bool)(this["showPaused"]));
             }
             set {
                 this["showPaused"] = value;
@@ -98,12 +98,24 @@ namespace NetEaseMusic_DiscordRPC.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public string DefActive {
+        public bool DefActive {
             get {
-                return ((string)(this["DefActive"]));
+                return ((bool)(this["DefActive"]));
             }
             set {
                 this["DefActive"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool showSmallImg {
+            get {
+                return ((bool)(this["showSmallImg"]));
+            }
+            set {
+                this["showSmallImg"] = value;
             }
         }
     }
