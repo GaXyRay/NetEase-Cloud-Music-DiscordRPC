@@ -226,7 +226,6 @@ namespace NetEaseMusic_DiscordRPC
             {
                 using var discord = new DiscordRpcClient(ApplicationId);
                 discord.Initialize();
-                var musicId = string.Empty;
                 var playerState = false;
                 var currentSong = string.Empty;
                 var oldplaySong = string.Empty;
@@ -237,7 +236,6 @@ namespace NetEaseMusic_DiscordRPC
                 var diffRate = 0.01;
                 var largeImg = Properties.Settings.Default.DefSkin;
                 var largeImgText = "Netease Cloud Music";
-                var albumArtUrl = string.Empty;
                 
 
                 while (true)
@@ -341,22 +339,18 @@ namespace NetEaseMusic_DiscordRPC
                         timeNow = new Timestamps(DateTime.UtcNow.Subtract(TimeSpan.FromSeconds(currentRate)), DateTime.UtcNow.Subtract(TimeSpan.FromSeconds(currentRate)).Add(TimeSpan.FromSeconds(maxSongLens)));
                     }
 
-                    if (playingStats.Checked)
+                    largeImgText = "Netease Cloud Music";
+                    if (showSmallImg.Checked)
                     {
-                        smallImgPlaying = "";
-                        largeImgText = "Netease Cloud Music";
-                        if (showSmallImg.Checked)
-                        {
-                            if (defDark.Checked)
-                                smallImgPlaying = "dark_active";
-                            if (defDiscord.Checked)
-                                smallImgPlaying = "discord_active";
-                            if (defNetease.Checked)
-                                smallImgPlaying = "netease_active";
-                            if (defWhite.Checked)
-                                smallImgPlaying = "white_active";
-                            smallImgText = "Playing";
-                        }
+                        if (defDark.Checked)
+                            smallImgPlaying = "dark_active";
+                        if (defDiscord.Checked)
+                            smallImgPlaying = "discord_active";
+                        if (defNetease.Checked)
+                            smallImgPlaying = "netease_active";
+                        if (defWhite.Checked)
+                            smallImgPlaying = "white_active";
+                        smallImgText = "Playing";
                     }
 
                 Update:
