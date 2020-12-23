@@ -27,10 +27,11 @@ namespace NetEaseMusic_DiscordRPC
                     if ("cloudmusic.dll".Equals(module.ModuleName))
                     {
                         BaseAddress = module.BaseAddress;
-                        //Debug.Print($"Match module address {module.BaseAddress}");
+                        Debug.Print($"Match module address {module.BaseAddress}");
                         break;
                     }
                 }
+                    
             }
 
             if (EntryPoint == IntPtr.Zero || BaseAddress == IntPtr.Zero)
@@ -45,7 +46,8 @@ namespace NetEaseMusic_DiscordRPC
 
             // offset 2.7.1 -> 0x8ADA70
             // offset 2.7.3 -> 0x8BDAD0
-            if (!ReadProcessMemory(EntryPoint, BaseAddress + 0x8BDAD0, buffer, sizeof(double), IntPtr.Zero))
+            // offset 2.7.5 -> 0x8BEAD0
+            if (!ReadProcessMemory(EntryPoint, BaseAddress + 0x8BEAD0, buffer, sizeof(double), IntPtr.Zero))
             {
                 Debug.Print($"Failed to load memory at 0x{(BaseAddress + 0x8BDAD0).ToString("X")}");
                 return;
@@ -54,7 +56,8 @@ namespace NetEaseMusic_DiscordRPC
 
             // offset 2.7.1 -> 0x8CDF88
             // offset 2.7.3 -> 0x8DEB98
-            if (!ReadProcessMemory(EntryPoint, BaseAddress + 0x8DEB98, buffer, sizeof(double), IntPtr.Zero))
+            // offset 2.7.5 -> 0x8DFC18
+            if (!ReadProcessMemory(EntryPoint, BaseAddress + 0x8DFC18, buffer, sizeof(double), IntPtr.Zero))
             {
                 //Debug.Print($"Failed to load memory at 0x{(BaseAddress + 0x792BEB98).ToString("X")}");
                 return;
