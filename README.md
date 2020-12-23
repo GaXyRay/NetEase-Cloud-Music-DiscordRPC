@@ -3,8 +3,8 @@
   
 Enables Discord [Rich Presence](https://discordapp.com/rich-presence) For Netease Cloud Music.  
 将网易云音乐动态同步到Discord.  
-2.1 updated the notification icon menu and added more options.  
-2.1更新了右下角通知区图标的菜单并添加了更多选项.
+2.2.1 Update memory address offset for NetEase Cloud Music v2.7.5  
+2.2.1 更新了偏移量
   
   
   
